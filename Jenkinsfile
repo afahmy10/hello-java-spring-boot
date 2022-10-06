@@ -24,7 +24,7 @@ pipeline {
         }
         stage("Docker Build") {
             steps {
-                 sh 'oc login https://api.crc.testing:6443 -u kubeadmin -p tQbwE-kRDFk-6ILCa-i2LTP  -n jenkins-local-project'
+                 sh 'oc login https://api.crc.testing:6443 -u kubeadmin -p tQbwE-kRDFk-6ILCa-i2LTP  -n jenkins-local-project --insecure-skip-tls-verify'
                 // This uploads your application's source code and performs a binary build in OpenShift
                 // This is a step defined in the shared library (see the top for the URL)
                 // (Or you could invoke this step using 'oc' commands!)
